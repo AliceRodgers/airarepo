@@ -26,9 +26,8 @@ SECRET_KEY = 'django-insecure-&l%pt$!q9x%5z%x*!^#i1g1gw5u^nes03%mjqgp7z8f(gp66gm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['aira23210362-env.eba-kptptmqy.eu-west-1.elasticbeanstalk.com', 'c06dd58bd73b4a709667c945a287106e.vfs.cloud9.eu-west-1.amazonaws.com']
 CSRF_TRUSTED_ORIGINS=['https://*']
-BEANSTALK_URL=['aira23210362-env.eba-kptptmqy.eu-west-1.elasticbeanstalk.com']
 # Application definition
 
 INSTALLED_APPS = [
@@ -119,7 +118,10 @@ LOGIN_URL ='login'
 AUTH_USER_MODEL = 'appaira.AiraUser'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = "appaira/static"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'appaira/media')
 
