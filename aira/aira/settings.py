@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-&l%pt$!q9x%5z%x*!^#i1g1gw5u^nes03%mjqgp7z8f(gp66gm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aira23210362-env.eba-kptptmqy.eu-west-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['8']
 CSRF_TRUSTED_ORIGINS=['https://*']
+BEANSTALK_URL=['aira23210362-env.eba-kptptmqy.eu-west-1.elasticbeanstalk.com']
 # Application definition
 
 INSTALLED_APPS = [
