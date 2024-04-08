@@ -59,7 +59,7 @@
                         </div>
                         {% if not user.is_authenticated %}
                       <div class="u-container-style u-list-item u-repeater-item">
-                        <a href="{% url 'register' %}"   class="u-container-layout u-similar-container u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-icon-1"><img src="static/images/2321232.png" alt=""></span>
+                        <a href="{% url 'register' %}"   class="u-container-layout u-similar-container u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-icon-1"><H6>SignUp</H6></span>
                         </div>
                         {% else %}
                         <a href="{% url 'logout' %}"><H6>logout</H6></a>
@@ -81,37 +81,37 @@
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="408">
-              <div href = "{% url 'skincare' %}"class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                 <img src="static/images2/Skincare.jpg" class="u-Skincare-image u-Skincare-image">
-                <h5 class="u-text u-text-2"> Skincare</h5>
+                <a href = "{% url 'skincare' %}"><h5 class="u-text u-text-2"> Skincare</h5></a>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="1100">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
                 <img src="static/images2/Haircare.jpeg" class="u-Haircare-image u-Haircare-image">
-                <h5 class="u-text u-text-3"> Hair</h5>
+                <a href = "{% url 'hair' %}"><h5 class="u-text u-text-3"> Hair</h5></a>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="716" data-image-height="932">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
                 <img src="static/images2/Makeup2.jpeg" class="u-Makeup2-image u-Makeup2-image">
-                <h5 class="u-text u-text-4"> Makeup</h5>
+                <a href = "{% url 'makeup' %}"><h5 class="u-text u-text-4"> Makeup</h5></a>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="1128">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
                 <img src="static/images2/bathbody.jpeg" class="u-bathbody-image u-bathbody-image">
-                <h5 class="u-text u-text-5"> Bath &amp; Body</h5>
+                <a href = "{% url 'BathnBody' %}"><h5 class="u-text u-text-5"> Bath &amp; Body</h5></a>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-5" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="912">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5">
                 <img src="static/images2/perfume.png" class="u-perfume-image u-perfume-image">
-                <h5 class="u-text u-text-6"> Fragrance</h5>
+                <a href ="{%url 'fragrance' %}"><h5 class="u-text u-text-6"> Fragrance</h5><a/>
               </div>
             </div>
           </div>
-          <h5 class="u-text u-text-2"> To view all products</h5>
+          <a href = "{% url 'products' %}"><h5 class="u-text u-text-2"> To view all products</h5></a>
         </div>
       </div>
     </section>
