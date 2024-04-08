@@ -5,10 +5,10 @@
     <meta name="keywords" content="​Dreadlocks &amp;amp; Weave Spa, ​Hair Services, About Salon, ​To book and for exact pricing please call us at 123-456-7868, mission, Why Us?, Visit Us, Contact Us">
     <meta name="description" content="">
     <title>Home</title>
-    <link rel="stylesheet" href="static/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="static/css/Home.css" media="screen">
-    <script class="u-script" type="text/javascript" src="static/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="static/nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.6.3, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -23,20 +23,17 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
-		"logo": "static/images/logo1.png",
+		"logo": "images/logo1.png",
 		"sameAs": []
 }</script>
     <meta name="theme-color" content="#80b4ff">
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-transparent u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-bdaf"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="{% url 'home' %}" class="u-image u-logo u-image-1" data-image-width="472" data-image-height="455" title="Home">
-          <img src="static/images/logo1.png" class="u-logo-image u-logo-image-1">
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-transparent u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-sticky-0d12 u-header" id="sec-bdaf"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="Home.html" class="u-image u-logo u-image-1" data-image-width="472" data-image-height="455" title="Home">
+          <img src="images/logo1.png" class="u-logo-image u-logo-image-1">
         </a>
-      </div></header>
-    <section class="skrollable skrollable-between u-align-left u-clearfix u-image u-section-1" id="carousel_c16d" src="" data-image-width="1024" data-image-height="712">
-      <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500">Welcome to Aira<br>&nbsp;Your Destination for all your beauty needs!
         </h2>
         <div class="custom-expanded data-layout-selected u-align-left u-clearfix u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1">
@@ -44,141 +41,131 @@
             <div class="u-layout-row">
               <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
                 <div class="u-container-layout u-container-layout-1">
-                  <div class="u-list u-list-1">
-                    <div class="u-repeater u-repeater-1">
-                      {% if not user.is_authenticated %}
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <a href = "{% url 'login'%}" class="u-container-layout  u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-icon-1"><img src="static/images/2321232.png" alt=""></span>
-                        </a>
-                        {% else %}
-                        <a><H4>Hi! {{user.username}}</H4></a>
-                        {% endif %}
-                      </div>
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <a href="{% url 'cart' %}"  class="u-container-layout u-similar-container u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-icon-1"><img src="static/images/833314.png" alt=""></span>
-                        </div>
-                        {% if not user.is_authenticated %}
-                      <div class="u-container-style u-list-item u-repeater-item">
-                        <a href="{% url 'register' %}"   class="u-container-layout u-similar-container u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-icon-1"><img src="static/images/2321232.png" alt=""></span>
-                        </div>
-                        {% else %}
-                        <a href="{% url 'logout' %}"><H6>logout</H6></a>
-                        {% endif %}
-                      </div>
-                      </div>
-                    </div>
-                  </div>
+                  <a href="https://nicepage.best" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-grey-5 u-btn-1">Services</a>
+                  <a href="https://nicepage.best" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-2">Brands </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div></header>
+    <section class="skrollable skrollable-between u-align-left u-clearfix u-image u-section-1" id="carousel_c16d" src="" data-image-width="1024" data-image-height="712">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-icon-1"><img src="images/2321232.png" alt=""></span>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-custom-item u-file-icon u-icon u-icon-2"><img src="images/7245139.png" alt=""></span>
+              </div>
+            </div>
+            <div class="u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-custom-item u-file-icon u-icon u-icon-3"><img src="images/833314.png" alt=""></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-grey u-section-2">
+    <section class="u-align-center u-clearfix u-white u-section-2" id="carousel_c72b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"> Discover with us&nbsp;&nbsp;</h2>
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="408">
-              <div href = "{% url 'skincare' %}"class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-                <img src="static/images2/Skincare.jpg" class="u-Skincare-image u-Skincare-image">
+            <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="612" data-image-height="408">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                 <h5 class="u-text u-text-2"> Skincare</h5>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="1100">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-                <img src="static/images2/Haircare.jpeg" class="u-Haircare-image u-Haircare-image">
                 <h5 class="u-text u-text-3"> Hair</h5>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="716" data-image-height="932">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-                <img src="static/images2/Makeup2.jpeg" class="u-Makeup2-image u-Makeup2-image">
                 <h5 class="u-text u-text-4"> Makeup</h5>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="1128">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
-                <img src="static/images2/bathbody.jpeg" class="u-bathbody-image u-bathbody-image">
                 <h5 class="u-text u-text-5"> Bath &amp; Body</h5>
               </div>
             </div>
             <div class="u-align-center u-container-style u-image u-list-item u-repeater-item u-shape-rectangle u-image-5" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" data-image-width="736" data-image-height="912">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5">
-                <img src="static/images2/perfume.png" class="u-perfume-image u-perfume-image">
                 <h5 class="u-text u-text-6"> Fragrance</h5>
               </div>
             </div>
           </div>
-          <h5 class="u-text u-text-2"> To view all products</h5>
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-grey u-section-3" id=>
-      <div class="u-expanded-width u-shape u-shape-rectangle u-shape-1" style="background-color: u-grey;"></div>
-      <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-1">BRANDS<span style="font-weight: 700;"></span>
-      </h2>
+    <section class="u-align-center u-clearfix u-white u-section-3" id="carousel_bdc9">
+      <div class="u-expanded-width u-palette-1-light-3 u-shape u-shape-rectangle u-shape-1"></div>
+      <h2 class="u-align-center u-custom-font u-font-arial u-text u-text-1">Bestse​llers </h2>
       <div class="custom-expanded u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
         <div class="u-gallery-inner u-gallery-inner-1">
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle">
             <div class="u-back-slide" data-image-width="736" data-image-height="736">
-              <img class="u-back-image u-expanded" src="static/images/AllProducts.jpeg">
-      
+              <img class="u-back-image u-expanded" src="images/AllProducts.jpeg">
             </div>
-            
             <div class="u-over-slide u-shading u-over-slide-1"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle">
             <div class="u-back-slide" data-image-width="736" data-image-height="981">
-              <img class="u-back-image u-expanded" src="static/images/COMPARISON_Thebest10productsbyTheOrdinary.jpeg">
+              <img class="u-back-image u-expanded" src="images/COMPARISON_Thebest10productsbyTheOrdinary.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-2"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle" data-image-width="640" data-image-height="733">
             <div class="u-back-slide" data-image-width="736" data-image-height="1104">
-              <img class="u-back-image u-expanded" src="static/images/fenty.jpeg">
+              <img class="u-back-image u-expanded" src="images/fenty.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-3"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle" data-image-width="736" data-image-height="1506">
             <div class="u-back-slide" data-image-width="736" data-image-height="736">
-              <img class="u-back-image u-expanded" src="static/images/CharlotteTilburyTheBeautyversePaletteBringsPastelstoHoliday2023-MusingsofaMuse.jpeg">
+              <img class="u-back-image u-expanded" src="images/CharlotteTilburyTheBeautyversePaletteBringsPastelstoHoliday2023-MusingsofaMuse.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-4"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle">
             <div class="u-back-slide" data-image-width="736" data-image-height="981">
-              <img class="u-back-image u-expanded" src="static/images/OLAPLEXNo_1-7_WHATISITANDWHYYOUNEEDIT-LALOVESIT.jpeg">
+              <img class="u-back-image u-expanded" src="images/OLAPLEXNo_1-7_WHATISITANDWHYYOUNEEDIT-LALOVESIT.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-5"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle" data-image-width="735" data-image-height="1102">
             <div class="u-back-slide" data-image-width="640" data-image-height="640">
-              <img class="u-back-image u-expanded" src="static/images/AdvancedNightRepairSerum_EsteLauder.jpeg">
+              <img class="u-back-image u-expanded" src="images/AdvancedNightRepairSerum_EsteLauder.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-6"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle">
             <div class="u-back-slide" data-image-width="563" data-image-height="704">
-              <img class="u-back-image u-expanded" src="static/images/3d6e91de-ef13-5add-d4f1-686a6bfefcb3.jpeg">
+              <img class="u-back-image u-expanded" src="images/3d6e91de-ef13-5add-d4f1-686a6bfefcb3.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-7"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle">
             <div class="u-back-slide" data-image-width="736" data-image-height="1103">
-              <img class="u-back-image u-expanded" src="static/images/RareBeautySoftPinchTintedLipOils-TheBeautyLookBook.jpeg">
+              <img class="u-back-image u-expanded" src="images/RareBeautySoftPinchTintedLipOils-TheBeautyLookBook.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-8"></div>
           </div>
           <div class="u-effect-fade u-effect-hover-zoom u-gallery-item u-shape-rectangle">
             <div class="u-back-slide" data-image-width="736" data-image-height="981">
-              <img class="u-back-image u-expanded" src="static/images/CantuCurlyHairProductsReview.jpeg">
+              <img class="u-back-image u-expanded" src="images/CantuCurlyHairProductsReview.jpeg">
             </div>
             <div class="u-over-slide u-shading u-over-slide-9"></div>
           </div>
         </div>
       </div>
+      <p class="u-text u-text-default u-text-2">Images from <a href="https://www.freepik.com/" class="u-active-none u-border-1 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-hover-none u-none u-radius-0 u-text-active-black u-text-body-color u-text-hover-black u-top-left-radius-0 u-top-right-radius-0 u-btn-1" target="_blank">Freepik</a>
+      </p>
     </section>
     <section class="skrollable skrollable-between u-align-center u-clearfix u-image u-parallax u-section-4" src="" id="carousel_5647" data-image-width="278" data-image-height="512">
       <div class="u-clearfix u-sheet u-sheet-1">
@@ -188,12 +175,15 @@
           <div class="u-layout">
             <div class="u-layout-row">
               <div class="u-align-right u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                <div class="u-container-layout u-valign-middle u-container-layout-1">
+                  <a href="https://nicepage.studio" class="u-align-right u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-1" data-animation-name="bounceIn" data-animation-duration="1750" data-animation-delay="1250" data-animation-direction=""> Become A Member</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="u-form u-form-1">
-          <form class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="email">
+          <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px;" source="email">
             <div class="u-form-email u-form-group u-label-none">
               <label for="email-ef64" class="u-label">Email</label>
               <input type="email" placeholder="Email" id="email-ef64" name="email" class="u-input u-input-rectangle" required="">
@@ -237,4 +227,16 @@
           </a>
         </div>
       </div></footer>
-    </body></html>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
+        <span>HTML Layout generator</span>
+      </a>. 
+    </section>
+  
+</body></html>
