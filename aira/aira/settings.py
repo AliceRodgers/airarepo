@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS=['https://*']
+BEANSTALK_URL = 'BEANSTALK_URL'
 
 # Application definition
 
