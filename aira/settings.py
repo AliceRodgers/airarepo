@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['aira23210362-env.eba-kptptmqy.eu-west-1.elasticbeanstalk.com',
 'c06dd58bd73b4a709667c945a287106e.vfs.cloud9.eu-west-1.amazonaws.com']
-CSRF_TRUSTED_ORIGINS=['https://*']
+CSRF_TRUSTED_ORIGINS=['https://c06dd58bd73b4a709667c945a287106e.vfs.cloud9.eu-west-1.amazonaws.com']
 # Application definition
 
 INSTALLED_APPS = [
