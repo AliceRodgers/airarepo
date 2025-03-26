@@ -9,6 +9,7 @@ urlpatterns = [
     path('cart/', views.cart, name='cart'),  # URL for the cart page
     path('cart/<Product_id>', views.addtocart, name='addtocart'),
     path('removefromcart/<Product_id>', views.removefromcart, name='removefromcart'),
+    path('update-cart/<int:item_id>/<int:quantity>/', views.update_cart, name='update_cart'),
     path('products/', views.products, name='products'),
     # Add other URLs here if needed
     path('register/', views.register, name='register'),
@@ -28,4 +29,5 @@ urlpatterns = [
     path('products/mielle/', views.Ordinary, name = 'Mielle',),
     path('products/olaplex/', views.Ordinary, name = 'Olaplex',),
     path('products/rarebeauty/', views.Ordinary, name = 'Rare Beauty',),
+    path('brand/<str:brand_name>/', views.brand_view, name='brand'),
 ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

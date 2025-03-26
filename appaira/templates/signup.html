@@ -1,7 +1,291 @@
 <!-- templates/signup.html -->
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Aira Beauty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            padding: 2rem;
+            border: none;
+        }
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+            border: 2px solid #eee;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #ff9a9e;
+            box-shadow: 0 0 0 0.2rem rgba(255, 154, 158, 0.25);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+            background: linear-gradient(135deg, #fad0c4 0%, #ff9a9e 100%);
+        }
+        .input-group-text {
+            background: transparent;
+            border: 2px solid #eee;
+            border-left: none;
+        }
+        .social-login {
+            margin-top: 20px;
+        }
+        .social-btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .password-requirements {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+        .requirement {
+            margin-bottom: 0.25rem;
+        }
+        .requirement i {
+            margin-right: 0.5rem;
+        }
+        .valid-requirement {
+            color: #198754;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center text-white">
+                        <h2 class="mb-0">Create Account</h2>
+                        <p class="mb-0">Join Aira Beauty today</p>
+                    </div>
+                    <div class="card-body p-4">
+                        <form method="post" id="signupForm">
+                            {% csrf_token %}
+                            {{ form.non_field_errors }}
+
+                            <div class="mb-4">
+                                <label for="username" class="form-label">Username</label>
+                                <div class="input-group">
+                                    <input type="text" name="username" id="username" class="form-control" required>
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                                <div class="error-message" id="username-error"></div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <input type="email" name="email" id="email" class="form-control" required>
+                                    <span class="input-group-text">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </div>
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password1" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="password1" id="password1" class="form-control" required>
+                                    <span class="input-group-text password-toggle" style="cursor: pointer;">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                                <div class="error-message" id="password1-error"></div>
+                                <div class="password-requirements mt-2">
+                                    <div class="requirement" id="length-req">
+                                        <i class="fas fa-circle"></i> At least 8 characters
+                                    </div>
+                                    <div class="requirement" id="uppercase-req">
+                                        <i class="fas fa-circle"></i> One uppercase letter
+                                    </div>
+                                    <div class="requirement" id="number-req">
+                                        <i class="fas fa-circle"></i> One number
+                                    </div>
+                                    <div class="requirement" id="special-req">
+                                        <i class="fas fa-circle"></i> One special character
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password2" class="form-label">Confirm Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="password2" id="password2" class="form-control" required>
+                                    <span class="input-group-text password-toggle" style="cursor: pointer;">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                                <div class="error-message" id="password2-error"></div>
+                            </div>
+
+                            <div class="mb-4 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and <a href="#" class="text-decoration-none">Privacy Policy</a>
+                                </label>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-user-plus me-2"></i>Create Account
+                                </button>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <p class="mb-0">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login</a></p>
+                            </div>
+
+                            <div class="social-login text-center">
+                                <p class="text-muted">Or sign up with</p>
+                                <button type="button" class="btn btn-outline-dark social-btn">
+                                    <i class="fab fa-google"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark social-btn">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-dark social-btn">
+                                    <i class="fab fa-apple"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Password visibility toggle
+            const passwordToggles = document.querySelectorAll('.password-toggle');
+            passwordToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input');
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    this.querySelector('i').classList.toggle('fa-eye');
+                    this.querySelector('i').classList.toggle('fa-eye-slash');
+                });
+            });
+
+            // Password validation
+            const password1 = document.getElementById('password1');
+            const password2 = document.getElementById('password2');
+            
+            function validatePassword(password) {
+                const requirements = {
+                    length: password.length >= 8,
+                    uppercase: /[A-Z]/.test(password),
+                    number: /[0-9]/.test(password),
+                    special: /[!@#$%^&*]/.test(password)
+                };
+
+                document.getElementById('length-req').classList.toggle('valid-requirement', requirements.length);
+                document.getElementById('uppercase-req').classList.toggle('valid-requirement', requirements.uppercase);
+                document.getElementById('number-req').classList.toggle('valid-requirement', requirements.number);
+                document.getElementById('special-req').classList.toggle('valid-requirement', requirements.special);
+
+                return Object.values(requirements).every(req => req);
+            }
+
+            password1.addEventListener('input', function() {
+                validatePassword(this.value);
+            });
+
+            // Form validation
+            const signupForm = document.getElementById('signupForm');
+            signupForm.addEventListener('submit', function(e) {
+                let isValid = true;
+                const username = document.getElementById('username');
+                const email = document.getElementById('email');
+                
+                // Username validation
+                if (username.value.trim() === '') {
+                    document.getElementById('username-error').textContent = 'Username is required';
+                    document.getElementById('username-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Email validation
+                if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    document.getElementById('email-error').textContent = 'Please enter a valid email address';
+                    document.getElementById('email-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Password validation
+                if (!validatePassword(password1.value)) {
+                    document.getElementById('password1-error').textContent = 'Password does not meet requirements';
+                    document.getElementById('password1-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                // Password confirmation
+                if (password1.value !== password2.value) {
+                    document.getElementById('password2-error').textContent = 'Passwords do not match';
+                    document.getElementById('password2-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    e.preventDefault();
+                }
+            });
+
+            // Clear error messages on input
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const errorElement = document.getElementById(`${this.id}-error`);
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

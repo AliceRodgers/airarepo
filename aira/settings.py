@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-&l%pt$!q9x%5z%x*!^#i1g1gw5u^nes03%mjqgp7z8f(gp66gm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['airarepo.onrender.com']
-CSRF_TRUSTED_ORIGINS=['https://airarepo.onrender.com']
+ALLOWED_HOSTS = ['airarepo.onrender.com','127.0.0.1']
+CSRF_TRUSTED_ORIGINS=['https://airarepo.onrender.com','http://127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
