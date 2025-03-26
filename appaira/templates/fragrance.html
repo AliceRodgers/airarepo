@@ -137,8 +137,8 @@
         <div class="container">
             <h1 class="display-4 fw-bold">Fragrance</h1>
             <p class="category-description">Discover our exquisite collection of fragrances. From floral to woody notes, find your signature scent that tells your unique story.</p>
-        </div>
-    </div>
+              </div>
+          </div>
 
     <div class="container">
         <div class="row">
@@ -157,8 +157,8 @@
                     <h4 class="filter-title">Brands</h4>
                     <a href="{% url 'brand' 'esteelauder' %}" class="filter-link">Estée Lauder</a>
                 </div>
-            </div>
-            
+      </div>
+      
             <!-- Products Grid -->
             <div class="col-lg-9">
                 <div class="row">
@@ -173,10 +173,10 @@
                                     <div class="product-price">€{{ product.price }}</div>
                                     <a href="{% url 'addtocart' product.id %}" class="btn btn-add-cart">
                                         <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                                    </a>
-                                </div>
+          </a>
+        </div>
                             </div>
-                        </div>
+                  </div>
                     </div>
                     {% empty %}
                     <div class="col-12 text-center">
@@ -186,7 +186,7 @@
                 </div>
             </div>
         </div>
-    </div>
+          </div>
 
     <!-- Footer -->
     <footer class="bg-white py-4 mt-5">
@@ -198,10 +198,10 @@
                         <a href="#" class="text-dark mx-2"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-dark mx-2"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-dark mx-2"><i class="fab fa-twitter"></i></a>
-                    </div>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
