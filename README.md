@@ -4,7 +4,7 @@
 
 A modern e-commerce platform for premium beauty products, built with Django and designed with a focus on user experience and aesthetic appeal.
 
-🌐 **Live Demo:** [Aira Beauty](https://alicerodgers.netlify.app)
+🌐 **Live Demo:** https://airarepo.onrender.com
 
 ## ✨ Features
 
