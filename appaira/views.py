@@ -4,32 +4,70 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.decorators.http import require_POST
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_protect
 from .forms import AiraUserform
 from .models import Product
-from django.http import JsonResponse
 
 def home(request):
     """home page for airapp"""
     return render(request, 'home.html')
 
 @login_required
+@csrf_protect
+@require_POST
+def add_to_cart_ajax(request, product_id):
+    """Handle AJAX request to add item to cart"""
+    if not request.user.is_authenticated:
+        return JsonResponse({
+            'success': False,
+            'message': 'Please log in to add items to cart'
+        }, status=401)
+
+    try:
+        product = get_object_or_404(Product, pk=product_id)
+        
+        # Check if product is already in cart
+        if request.user not in product.cart.all():
+            product.cart.add(request.user)
+            cart_count = request.user.addtocart.count()
+            return JsonResponse({
+                'success': True,
+                'message': 'Item added to cart successfully',
+                'cart_count': cart_count
+            })
+        else:
+            return JsonResponse({
+                'success': False,
+                'message': 'Item is already in your cart'
+            })
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'message': str(e)
+        }, status=400)
+
+@login_required
 def addtocart(request, Product_id):
-    """Check if the user is logged in"""
-    if request.user.is_authenticated:
-        user = request.user
-    else:
-        # Redirect to login page if not logged in
+    """Legacy cart addition for non-JS fallback"""
+    if not request.user.is_authenticated:
         return redirect('login')
 
-    # Get the product
     product = get_object_or_404(Product, pk=Product_id)
 
-    # Check if user is in Product.cart.all()
-    if user not in product.cart.all():
-        # Create new cart if not exist
-        product.cart.add(user)
+    if request.user not in product.cart.all():
+        product.cart.add(request.user)
     else:
         messages.error(request, "Error: You have already added this product to your cart.")
+    
+    # Return JSON response if it's an AJAX request
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({
+            'success': True,
+            'cart_count': request.user.addtocart.count()
+        })
+    
     return redirect('cart')
 
 def removefromcart(request, Product_id):

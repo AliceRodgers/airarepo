@@ -1,212 +1,160 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hair Care - Aira Beauty</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .navbar-brand img {
-            max-height: 50px;
-        }
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 30px;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-        .product-image {
-            height: 250px;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
-        .product-info {
-            padding: 20px;
-        }
-        .product-brand {
-            color: #6c757d;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .product-name {
-            font-weight: 600;
-            margin: 10px 0;
-            font-size: 1.1rem;
-            height: 2.4em;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #ff4b6e;
-        }
-        .btn-add-cart {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-weight: 600;
-            padding: 10px 20px;
-            transition: all 0.3s ease;
-        }
-        .btn-add-cart:hover {
-            background: linear-gradient(135deg, #fad0c4 0%, #ff9a9e 100%);
-            transform: translateY(-2px);
-            color: white;
-        }
-        .category-filter {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .filter-title {
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        .filter-link {
-            color: #666;
-            text-decoration: none;
-            display: block;
-            padding: 8px 0;
-            transition: color 0.3s ease;
-        }
-        .filter-link:hover {
-            color: #ff4b6e;
-        }
-        .filter-link.active {
-            color: #ff4b6e;
-            font-weight: 600;
-        }
-        .section-title {
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-        }
-        .category-banner {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            padding: 60px 0;
-            margin-bottom: 40px;
-            color: white;
-            text-align: center;
-        }
-        .category-description {
-            max-width: 600px;
-            margin: 20px auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation will be included here -->
-    
-    <!-- Category Banner -->
-    <div class="category-banner">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Hair Care</h1>
-            <p class="category-description">Transform your hair with our premium collection of hair care products. From nourishing treatments to styling essentials, find everything you need for healthy, beautiful hair.</p>
-              </div>
-          </div>
+{% extends 'base.html' %}
 
+{% block title %}Hair Care - Aira Beauty{% endblock %}
+
+{% block extra_css %}
+.product-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.product-image {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.product-info {
+    padding: 20px;
+}
+.product-brand {
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.product-name {
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    height: 2.4em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ff4b6e;
+}
+.btn-add-cart {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+.btn-add-cart:hover {
+    background: linear-gradient(135deg, #fad0c4 0%, #ff9a9e 100%);
+    transform: translateY(-2px);
+    color: white;
+}
+.category-filter {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.filter-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+.filter-link {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+.filter-link:hover {
+    color: #ff4b6e;
+}
+.filter-link.active {
+    color: #ff4b6e;
+    font-weight: 600;
+}
+.category-banner {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    padding: 60px 0;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+}
+.category-description {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+{% endblock %}
+
+{% block content %}
+<!-- Category Banner -->
+<div class="category-banner">
     <div class="container">
-        <div class="row">
-            <!-- Filters Sidebar -->
-            <div class="col-lg-3">
-                <div class="category-filter">
-                    <h4 class="filter-title">Categories</h4>
-                    <a href="{% url 'skincare' %}" class="filter-link">Skincare</a>
-                    <a href="{% url 'makeup' %}" class="filter-link">Makeup</a>
-                    <a href="{% url 'hair' %}" class="filter-link active">Hair</a>
-                    <a href="{% url 'fragrance' %}" class="filter-link">Fragrance</a>
-                    <a href="{% url 'BathnBody' %}" class="filter-link">Bath & Body</a>
-                </div>
+        <h1 class="display-4 fw-bold">Hair Care</h1>
+        <p class="category-description">Discover our selection of premium hair care products to keep your locks healthy, strong, and beautiful.</p>
+    </div>
+</div>
 
-                <div class="category-filter">
-                    <h4 class="filter-title">Brands</h4>
-                    <a href="{% url 'brand' 'olaplex' %}" class="filter-link">Olaplex</a>
-                    <a href="{% url 'brand' 'gisou' %}" class="filter-link">Gisou</a>
-                    <a href="{% url 'brand' 'mielle' %}" class="filter-link">Mielle</a>
-                    <a href="{% url 'brand' 'cantu' %}" class="filter-link">Cantu</a>
-                </div>
-      </div>
-      
-            <!-- Products Grid -->
-            <div class="col-lg-9">
-                <div class="row">
-                    {% for product in hair_products %}
-                    <div class="col-md-4">
-                        <div class="product-card">
-                            <img src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}" class="img-fluid product-image">
-                            <div class="product-info">
-                                <div class="product-brand">{{ product.brand }}</div>
-                                <h3 class="product-name">{{ product.name }}</h3>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="product-price">€{{ product.price }}</div>
-                                    <a href="{% url 'addtocart' product.id %}" class="btn btn-add-cart">
-                                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-          </a>
-        </div>
-                            </div>
-                  </div>
-                    </div>
-                    {% empty %}
-                    <div class="col-12 text-center">
-                        <p>No hair care products found.</p>
-                    </div>
-                    {% endfor %}
-                </div>
+<div class="container">
+    <div class="row">
+        <!-- Filters Sidebar -->
+        <div class="col-lg-3">
+            <div class="category-filter">
+                <h4 class="filter-title">Categories</h4>
+                <a href="{% url 'skincare' %}" class="filter-link">Skincare</a>
+                <a href="{% url 'makeup' %}" class="filter-link">Makeup</a>
+                <a href="{% url 'hair' %}" class="filter-link active">Hair</a>
+                <a href="{% url 'fragrance' %}" class="filter-link">Fragrance</a>
+                <a href="{% url 'BathnBody' %}" class="filter-link">Bath & Body</a>
+            </div>
+
+            <div class="category-filter">
+                <h4 class="filter-title">Brands</h4>
+                <a href="{% url 'brand' 'olaplex' %}" class="filter-link">Olaplex</a>
+                <a href="{% url 'brand' 'gisou' %}" class="filter-link">Gisou</a>
+                <a href="{% url 'brand' 'mielle' %}" class="filter-link">Mielle</a>
             </div>
         </div>
-          </div>
-
-    <!-- Footer -->
-    <footer class="bg-white py-4 mt-5">
-        <div class="container">
+        
+        <!-- Products Grid -->
+        <div class="col-lg-9">
             <div class="row">
-                <div class="col-12 text-center">
-                    <p class="mb-0">Aira © 2024. All rights reserved.</p>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="text-dark mx-2"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-dark mx-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-dark mx-2"><i class="fab fa-twitter"></i></a>
+                {% for product in hair_products %}
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}" class="img-fluid product-image">
+                        <div class="product-info">
+                            <div class="product-brand">{{ product.brand }}</div>
+                            <h3 class="product-name">{{ product.name }}</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="product-price">€{{ product.price }}</div>
+                                <button class="btn btn-add-cart" onclick="addToCart({{ product.id }}, this)">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                {% empty %}
+                <div class="col-12 text-center">
+                    <p>No hair care products found.</p>
+                </div>
+                {% endfor %}
             </div>
-          </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        </div>
+    </div>
+</div>
+{% endblock %}

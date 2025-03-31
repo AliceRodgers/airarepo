@@ -7,7 +7,8 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),      # URL for the home page
     path('cart/', views.cart, name='cart'),  # URL for the cart page
-    path('cart/<Product_id>', views.addtocart, name='addtocart'),
+    path('cart/<int:Product_id>/', views.addtocart, name='addtocart'),  # Legacy cart addition
+    path('add-to-cart/<int:product_id>/', views.add_to_cart_ajax, name='add_to_cart_ajax'),  # AJAX cart addition
     path('removefromcart/<Product_id>', views.removefromcart, name='removefromcart'),
     path('update-cart/<int:item_id>/<int:quantity>/', views.update_cart, name='update_cart'),
     path('products/', views.products, name='products'),
