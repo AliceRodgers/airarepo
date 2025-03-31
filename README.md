@@ -1,6 +1,6 @@
 # Aira Beauty - Your Premium Beauty Destination
 
-![Aira Beauty Logo](appaira/static/images/logo1.png)
+<img src="appaira/static/images/logo1.png" alt="Aira Beauty Logo" width="200" height="auto">
 
 A modern e-commerce platform for premium beauty products, built with Django and designed with a focus on user experience and aesthetic appeal.
 
